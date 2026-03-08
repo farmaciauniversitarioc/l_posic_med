@@ -71,7 +71,7 @@ if arquivo_enviado is not None:
         st.subheader("Relatório Processado")
 
         st.dataframe(
-		df_filtrado.drop(columns=["catmat"],
+		df_filtrado.drop(columns=["catmat"]),
 		use_container_width=True
     	)
 
@@ -92,3 +92,4 @@ if arquivo_enviado is not None:
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 
         )
+
