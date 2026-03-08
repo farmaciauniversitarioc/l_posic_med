@@ -70,7 +70,11 @@ if arquivo_enviado is not None:
 
         st.subheader("Relatório Processado")
 
-        st.dataframe(df_filtrado, use_container_width=True)
+        st.dataframe(
+		df_filtrado.drop(columns=["catmat"],
+		use_container_width=True
+    	)
+
 
         st.write(f"Total de registros exibidos: {len(df_filtrado)}")
 
@@ -86,4 +90,5 @@ if arquivo_enviado is not None:
             data=output.getvalue(),
             file_name="relatorio_processado.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+
         )
